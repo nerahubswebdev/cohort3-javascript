@@ -88,81 +88,6 @@ console.log("person name ", person_name);
 
 const food = student.stdnt_fav_foods[1];
 
-const people = [
-  {
-    name: "Alice",
-    location: "New York",
-    age: 28,
-    savings: 12000,
-    voted: true,
-  },
-  {
-    name: "Bob",
-    location: "Los Angeles",
-    age: 34,
-    savings: 15000,
-    voted: false,
-  },
-  {
-    name: "Charlie",
-    location: "Chicago",
-    age: 25,
-    savings: 8000,
-    voted: true,
-  },
-  {
-    name: "Diana",
-    location: "Miami",
-    age: 30,
-    savings: 20000,
-    voted: true,
-  },
-  {
-    name: "Ethan",
-    location: "Dallas",
-    age: 22,
-    savings: 5000,
-    voted: false,
-  },
-  {
-    name: "Fiona",
-    location: "Seattle",
-    age: 29,
-    savings: 18000,
-    voted: true,
-  },
-  {
-    name: "George",
-    location: "San Francisco",
-    age: 40,
-    savings: 25000,
-    voted: true,
-  },
-  {
-    name: "Hannah",
-    location: "Boston",
-    age: 35,
-    savings: 30000,
-    voted: false,
-  },
-  {
-    name: "Ian",
-    location: "Atlanta",
-    age: 27,
-    savings: 7000,
-    voted: true,
-  },
-  {
-    name: "Julia",
-    location: "Denver",
-    age: 31,
-    savings: 9000,
-    voted: false,
-  },
-];
-
-console.log(people);
-
 const totalSavings = people.reduce((sum, person) => sum + person.savings, 0);
 console.log("total savings of all: ", totalSavings);
 
@@ -301,3 +226,160 @@ while (miles < 5) {
 //   default:
 //     console.log("Unknown category.");
 // }
+
+// functions
+
+// function functionName(parameters) {
+//   // code to be executed
+//   return value; // optional
+// }
+// Example:
+
+function add(a, b) {
+  const result = a + b;
+  console.log("addition result = ", result);
+}
+
+add(5, 6);
+add(67, 6);
+add(5, 69);
+add(5, 65);
+add(56, 6);
+add(55, 67);
+
+function welcome_message() {
+  console.log("welcome to javascript function");
+}
+
+welcome_message();
+
+function area(a, b) {
+  const result = (a * b) / 2;
+  // console.log("addition result = ", result);
+  return result;
+}
+
+console.log("the rsult of the fxn is : ", area(5, 6));
+
+const area_data = area(6, 6);
+
+const new_cal = area_data + 5;
+
+console.log("new calc data = ", new_cal);
+
+const area_data2 = area(9, 6);
+
+const new_cal2 = area_data2 * (5 / 2);
+
+console.log("new calc data = ", new_cal2);
+
+area(67, 6);
+area(5, 69);
+area(5, 65);
+area(56, 6);
+area(55, 67);
+
+function calculate(a, b, opreation) {
+  const calc_expression = `${a} ${opreation} ${b}`;
+  const result = eval(calc_expression);
+
+  console.log(`${calc_expression} = `, result);
+}
+
+calculate(4, 5, "+");
+
+const add2 = (a, b) => a + b;
+
+console.log(add2(7, 7));
+
+const add3 = (a, b) => {
+  const sum = a + b;
+  return sum;
+};
+
+add3(7, 7);
+
+const people = [
+  {
+    name: "Alice",
+    location: "New York",
+    age: 28,
+    savings: 12000,
+    voted: true,
+  },
+  {
+    name: "Bob",
+    location: "Los Angeles",
+    age: 34,
+    savings: 15000,
+    voted: false,
+  },
+  {
+    name: "Charlie",
+    location: "Chicago",
+    age: 25,
+    savings: 8000,
+    voted: true,
+  },
+  {
+    name: "Diana",
+    location: "Miami",
+    age: 30,
+    savings: 20000,
+    voted: true,
+  },
+  {
+    name: "Ethan",
+    location: "Dallas",
+    age: 22,
+    savings: 5000,
+    voted: false,
+  },
+  {
+    name: "Fiona",
+    location: "Seattle",
+    age: 29,
+    savings: 18000,
+    voted: true,
+  },
+  {
+    name: "George",
+    location: "San Francisco",
+    age: 40,
+    savings: 25000,
+    voted: true,
+  },
+  {
+    name: "Hannah",
+    location: "Boston",
+    age: 35,
+    savings: 30000,
+    voted: false,
+  },
+  {
+    name: "Ian",
+    location: "Atlanta",
+    age: 27,
+    savings: 7000,
+    voted: true,
+  },
+  {
+    name: "Julia",
+    location: "Denver",
+    age: 31,
+    savings: 9000,
+    voted: false,
+  },
+];
+
+console.log(people);
+
+const totalSavings2 = people.reduce((sum, person) => sum + person.savings, 0);
+console.log("total savings of all: ", totalSavings2);
+
+const numbers2 = [1, 2, 3, 4];
+const sum3 = numbers2.reduce((acc, current) => acc + current, 0);
+
+const filtereddata = numbers2.filter((num) => num > 2);
+
+console.log(filtereddata);

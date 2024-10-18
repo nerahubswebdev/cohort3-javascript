@@ -244,7 +244,7 @@ for (let i = 1; i <= 20; i++) {
 }
 const miles = 0;
 while (miles < 5) {
-  console.log("miles is : ", +miles);
+  console.log("miles is : ", +" ", miles);
   miles++;
 }
 

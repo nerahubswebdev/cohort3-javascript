@@ -242,7 +242,7 @@ for (let i = 1; i <= 20; i++) {
     console.log(`${i} is an odd number`);
   }
 }
-const miles = 0;
+let miles = 0;
 while (miles < 5) {
   console.log("miles is : ", +" ", miles);
   miles++;
@@ -250,14 +250,54 @@ while (miles < 5) {
 
 // switch conditional statements
 
-switch (expression) {
-  case value1:
-    // code to be executed if expression === value1
-    break;
-  case value2:
-    // code to be executed if expression === value2
-    break;
-  // ... more cases
-  default:
-  // code to be executed if expression doesn't match any case
-}
+// switch (expression) {
+//   case value1:
+//     // code to be executed if expression === value1
+//     break;
+//   case value2:
+//     // code to be executed if expression === value2
+//     break;
+//   // ... more cases
+//   default:
+//   // code to be executed if expression doesn't match any case
+// }
+
+// let fruit = "3";
+
+// switch (fruit) {
+//   case 3:
+//     console.log("this is not the value");
+
+//     break;
+//   case "3":
+//     console.log("this is the value");
+//     break;
+
+//   default:
+//     console.log("i dont think fruit matches");
+
+//     break;
+// }
+
+// let category = "fruit";
+// let item = "banana";
+
+// switch (category) {
+//   case "fruit":
+//     switch (item) {
+//       case "banana":
+//         console.log("You selected a banana.");
+//         break;
+//       case "apple":
+//         console.log("You selected an apple.");
+//         break;
+//       default:
+//         console.log("Unknown fruit.");
+//     }
+//     break;
+//   case "vegetable":
+//     console.log("You selected a vegetable.");
+//     break;
+//   default:
+//     console.log("Unknown category.");
+// }

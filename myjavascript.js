@@ -381,5 +381,15 @@ const numbers2 = [1, 2, 3, 4];
 const sum3 = numbers2.reduce((acc, current) => acc + current, 0);
 
 const filtereddata = numbers2.filter((num) => num > 2);
+const filteredpeople = people.filter((person) => person.voted === false);
+const filteredpeopleage = people.filter((person) => person.age >= 30);
 
 console.log(filtereddata);
+
+const bonus = people.map((person) => person.savings + 1000);
+
+const bonusme = people.map((person) => ({
+  ...person,
+  savings: person.savings + 1000,
+  myown: person.savings + 5000,
+}));

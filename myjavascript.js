@@ -165,3 +165,99 @@ console.log(people);
 
 const totalSavings = people.reduce((sum, person) => sum + person.savings, 0);
 console.log("total savings of all: ", totalSavings);
+
+// const num1 = parseFloat(prompt("Enter the first number"));
+// const num2 = parseFloat(prompt("Enter the second number"));
+// // const mun3 = 4;
+// // const mun5 = 6;
+// console.log("the num 1 :", num1);
+// console.log("the num 2 :", num2);
+
+// const addition = num1 + num2;
+// const subtract = num1 - num2;
+// const multiply = num1 * num2;
+// const division = num1 / num2;
+// console.log("the result = ", addition);
+// console.log(`the addition result = ${addition}`);
+
+// console.log(
+//   `the results of all operations : Addition: ${addition}\n Difference: ${subtract}\n multiply: ${multiply}\n division: ${division}`
+// );
+
+// const line1 = prompt("Enter line one");
+// const line2 = parseInt(prompt("Enter line one"));
+
+// const sentence = `${line1}\nHe is ${line2} years old`;
+
+// console.log(sentence);
+
+// const animal = "dog";
+
+// if (animal === "dog") {
+//   console.log("yes it is a dog");
+// }
+
+// if (animal === "cat") {
+//   console.log("yes it is a dog");
+// } else {
+//   console.log("it is not a cat");
+// }
+
+// const firstnumber = parseFloat(prompt("Enter line one"));
+// const secondnumber = parseFloat(prompt("Enter line one"));
+
+// if (firstnumber > 20) {
+//   console.log("yes it is greater");
+// } else {
+//   console.log("not greater");
+// }
+
+// if (secondnumber < firstnumber) {
+//   console.log("yes it is less than");
+// } else {
+//   console.log("not less");
+// }
+
+// if (firstnumber % 2 === 0) {
+//   console.log("this is an even number");
+// } else if (secondnumber > firstnumber) {
+//   console.log("this is a prime number");
+// } else if (firstnumber >= 50) {
+//   console.log("it is equal or greater than 50");
+// } else {
+//   console.log("no condition is true");
+// }
+
+// for loop
+for (let i = 6; i < 3; i++) {
+  console.log(i);
+}
+
+// checking for even numbers using loop
+
+for (let i = 1; i <= 20; i++) {
+  if (i % 2 === 0) {
+    console.log(`${i} is an even number`);
+  } else {
+    console.log(`${i} is an odd number`);
+  }
+}
+const miles = 0;
+while (miles < 5) {
+  console.log("miles is : ", +miles);
+  miles++;
+}
+
+// switch conditional statements
+
+switch (expression) {
+  case value1:
+    // code to be executed if expression === value1
+    break;
+  case value2:
+    // code to be executed if expression === value2
+    break;
+  // ... more cases
+  default:
+  // code to be executed if expression doesn't match any case
+}

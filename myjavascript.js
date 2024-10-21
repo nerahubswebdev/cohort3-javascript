@@ -587,6 +587,14 @@ async function fetchmydata2() {
 fetchmydata2()
   .then((result) => {
     console.log("the result = > ", result);
+    const bonus = result.map((p) => p.title);
+    const sum3 = result.reduce((acc, current) => acc + current.price, 0);
+    const sum4 = result.reduce((acc, current) => acc + current.rating.count, 0);
+
+    console.log(bonus);
+
+    console.log("total price ", sum3);
+    console.log("total count ", sum4);
   })
   .catch((error) => {
     console.log("the then from try catch", error);

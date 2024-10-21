@@ -67,7 +67,7 @@ console.log("the first slot : ", first_slot);
 const b = array1.pop();
 const h = array1[1];
 
-const area = (b * h) / 2;
+// const area = (b * h) / 2;
 
 // objects in javascript
 
@@ -88,8 +88,8 @@ console.log("person name ", person_name);
 
 const food = student.stdnt_fav_foods[1];
 
-const totalSavings = people.reduce((sum, person) => sum + person.savings, 0);
-console.log("total savings of all: ", totalSavings);
+// const totalSavings = people.reduce((sum, person) => sum + person.savings, 0);
+// console.log("total savings of all: ", totalSavings);
 
 // const num1 = parseFloat(prompt("Enter the first number"));
 // const num2 = parseFloat(prompt("Enter the second number"));
@@ -253,31 +253,31 @@ function welcome_message() {
 
 welcome_message();
 
-function area(a, b) {
-  const result = (a * b) / 2;
-  // console.log("addition result = ", result);
-  return result;
-}
+// function area(a, b) {
+//   const result = (a * b) / 2;
+//   // console.log("addition result = ", result);
+//   return result;
+// }
 
-console.log("the rsult of the fxn is : ", area(5, 6));
+// console.log("the rsult of the fxn is : ", area(5, 6));
 
-const area_data = area(6, 6);
+// const area_data = area(6, 6);
 
-const new_cal = area_data + 5;
+// const new_cal = area_data + 5;
 
-console.log("new calc data = ", new_cal);
+// console.log("new calc data = ", new_cal);
 
-const area_data2 = area(9, 6);
+// const area_data2 = area(9, 6);
 
-const new_cal2 = area_data2 * (5 / 2);
+// const new_cal2 = area_data2 * (5 / 2);
 
-console.log("new calc data = ", new_cal2);
+// console.log("new calc data = ", new_cal2);
 
-area(67, 6);
-area(5, 69);
-area(5, 65);
-area(56, 6);
-area(55, 67);
+// area(67, 6);
+// area(5, 69);
+// area(5, 65);
+// area(56, 6);
+// area(55, 67);
 
 function calculate(a, b, opreation) {
   const calc_expression = `${a} ${opreation} ${b}`;
@@ -393,3 +393,52 @@ const bonusme = people.map((person) => ({
   savings: person.savings + 1000,
   myown: person.savings + 5000,
 }));
+
+const addme = (a, b) => a + b;
+
+console.log("direct sum = ", addme(7, 5));
+
+let number1 = parseFloat(prompt("Enter first number: "));
+let number2 = parseFloat(prompt("Enter second number: "));
+
+console.log("input sum = ", addme(number1, numbers2));
+
+// Function to get the day of the week
+function getDayOfWeek(dayNumber) {
+  let day;
+
+  switch (dayNumber) {
+    case 1:
+      day = "Sunday";
+      break;
+    case 2:
+      day = "Monday";
+      break;
+    case 3:
+      day = "Tuesday";
+      break;
+    case 4:
+      day = "Wednesday";
+      break;
+    case 5:
+      day = "Thursday";
+      break;
+    case 6:
+      day = "Friday";
+      break;
+    case 7:
+      day = "Saturday";
+      break;
+    default:
+      day = "Invalid day number";
+      break;
+  }
+
+  return day;
+}
+
+// Example usage
+const dayNumber = 3; // Change this value to test different cases
+const dayOfWeek = getDayOfWeek(dayNumber);
+
+console.log(`The day corresponding to ${dayNumber} is ${dayOfWeek}`);

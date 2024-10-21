@@ -398,47 +398,144 @@ const addme = (a, b) => a + b;
 
 console.log("direct sum = ", addme(7, 5));
 
-let number1 = parseFloat(prompt("Enter first number: "));
-let number2 = parseFloat(prompt("Enter second number: "));
+// let number1 = parseFloat(prompt("Enter first number: "));
+// let number2 = parseFloat(prompt("Enter second number: "));
 
-console.log("input sum = ", addme(number1, numbers2));
+// console.log("input sum = ", addme(number1, numbers2));
 
-// Function to get the day of the week
-function getDayOfWeek(dayNumber) {
-  let day;
+// // Function to get the day of the week
+// function getDayOfWeek(dayNumber) {
+//   let day;
 
-  switch (dayNumber) {
-    case 1:
-      day = "Sunday";
-      break;
-    case 2:
-      day = "Monday";
-      break;
-    case 3:
-      day = "Tuesday";
-      break;
-    case 4:
-      day = "Wednesday";
-      break;
-    case 5:
-      day = "Thursday";
-      break;
-    case 6:
-      day = "Friday";
-      break;
-    case 7:
-      day = "Saturday";
-      break;
-    default:
-      day = "Invalid day number";
-      break;
-  }
+//   switch (dayNumber) {
+//     case 1:
+//       day = "Sunday";
+//       break;
+//     case 2:
+//       day = "Monday";
+//       break;
+//     case 3:
+//       day = "Tuesday";
+//       break;
+//     case 4:
+//       day = "Wednesday";
+//       break;
+//     case 5:
+//       day = "Thursday";
+//       break;
+//     case 6:
+//       day = "Friday";
+//       break;
+//     case 7:
+//       day = "Saturday";
+//       break;
+//     default:
+//       day = "Invalid day number";
+//       break;
+//   }
 
-  return day;
-}
+//   return day;
+// }
 
 // Example usage
-const dayNumber = 3; // Change this value to test different cases
-const dayOfWeek = getDayOfWeek(dayNumber);
+// const dayNumber = 3; // Change this value to test different cases
+// const dayOfWeek = getDayOfWeek(dayNumber);
 
-console.log(`The day corresponding to ${dayNumber} is ${dayOfWeek}`);
+// console.log(`The day corresponding to ${dayNumber} is ${dayOfWeek}`);
+
+// function promises
+
+let promise = new Promise(function (resolve, reject) {
+  //do something
+});
+
+let count = 5 + 5 === 11;
+
+let countValue = new Promise(function (resolve, reject) {
+  if (count) {
+    resolve("There is a count value.");
+  } else {
+    reject("There is no count value");
+  }
+});
+
+console.log("the count value = ", countValue);
+
+// using the .then method
+
+let countValue2 = new Promise(function (resolve, reject) {
+  if (5 % 2 === 0) {
+    resolve({
+      name: "Hannah",
+      location: "Boston",
+      age: 35,
+      savings: 30000,
+      voted: false,
+    });
+  } else {
+    reject({
+      success: false,
+      message: "the condition failed",
+    });
+  }
+});
+
+console.log("without the dot then", countValue2);
+
+countValue2
+  .then((myresult) => {
+    const nnn = myresult;
+    console.log("the new result ", myresult.location);
+  })
+  .catch((error) => {
+    console.log("the error is : ", error);
+  });
+
+// tey ... catch
+
+let countValue3 = new Promise(function (resolve, reject) {
+  if (7 - 2 === 3) {
+    resolve({
+      name: "Hannah",
+      location: "Boston",
+      age: 35,
+      savings: 30000,
+      voted: false,
+      type: "try catch",
+    });
+  } else {
+    reject({
+      success: false,
+      message: "the condition failed from try catch",
+    });
+  }
+});
+
+async function handlePromise() {
+  try {
+    // the try body holds the resolve of the promise
+    const countvalue3result = await countValue3;
+    console.log("the new result from try catch ", countvalue3result);
+  } catch (error) {
+    // the catch body holds the reject of the promise
+    console.log("the new error result from try catch", error);
+  }
+}
+handlePromise();
+
+function fetchDataFromAPI() {
+  return new Promise((resolve, reject) => {
+    // Simulating an asynchronous operation (e.g., fetching data from an API)
+    setTimeout(() => {
+      const data = { message: 3 };
+      if (typeof data.message === string) {
+        resolve(data);
+      } else {
+        reject({
+          success: false,
+          message: "the api sample failed",
+        });
+      }
+    }, 9000);
+  });
+}

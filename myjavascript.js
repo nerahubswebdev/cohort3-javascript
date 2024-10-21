@@ -494,15 +494,16 @@ countValue2
 // tey ... catch
 
 let countValue3 = new Promise(function (resolve, reject) {
+  const me = {
+    name: "Hannah",
+    location: "Boston",
+    age: 35,
+    savings: 30000,
+    voted: false,
+    type: "try catch",
+  };
   if (7 - 2 === 3) {
-    resolve({
-      name: "Hannah",
-      location: "Boston",
-      age: 35,
-      savings: 30000,
-      voted: false,
-      type: "try catch",
-    });
+    resolve(me);
   } else {
     reject({
       success: false,
@@ -523,19 +524,70 @@ async function handlePromise() {
 }
 handlePromise();
 
+// https://fakestoreapi.com/products
+
 function fetchDataFromAPI() {
   return new Promise((resolve, reject) => {
     // Simulating an asynchronous operation (e.g., fetching data from an API)
     setTimeout(() => {
-      const data = { message: 3 };
-      if (typeof data.message === string) {
-        resolve(data);
+      if (2 + 2 === 4) {
+        resolve({
+          name: "Ian",
+          location: "Atlanta",
+          age: 27,
+          savings: 7000,
+          voted: true,
+          message: 3,
+        });
       } else {
         reject({
           success: false,
           message: "the api sample failed",
         });
       }
-    }, 9000);
+    }, 3000);
   });
 }
+
+async function fetchmydata() {
+  try {
+    console.log("Fetching data .....");
+    const response = await fetchDataFromAPI();
+    // console.log("the bare response : ", response);
+    const savings = response.savings;
+    // console.log("the savings : ", savings);
+    return response;
+  } catch (error) {
+    console.log("the new error my data from try catch", error);
+  }
+}
+
+fetchmydata()
+  .then((result) => {
+    console.log("the result = > ", result);
+    const sum = result.age + result.message;
+
+    console.log("the sum ", sum);
+  })
+  .catch((error) => {
+    console.log("the then from try catch", error);
+  });
+
+async function fetchmydata2() {
+  try {
+    console.log("Fetching data .....");
+    const response = await fetch("https://fakestoreapi.com/products");
+    // console.log("the bare response : ", response);
+    return response.json();
+  } catch (error) {
+    console.log("the new error my data from try catch", error);
+  }
+}
+
+fetchmydata2()
+  .then((result) => {
+    console.log("the result = > ", result);
+  })
+  .catch((error) => {
+    console.log("the then from try catch", error);
+  });

@@ -599,3 +599,65 @@ fetchmydata2()
   .catch((error) => {
     console.log("the then from try catch", error);
   });
+
+//https://cohort2-project-server.onrender.com/job/all-jobs
+
+// new api call
+async function fetchmydata3() {
+  try {
+    console.log("Fetching data .....");
+    const response = await fetch(
+      "https://cohort2-project-server.onrender.com/job/all-jobs"
+    );
+    // console.log("the bare response : ", response);
+    return response.json();
+  } catch (error) {
+    console.log("the new error my data from try catch", error);
+  }
+}
+
+fetchmydata3()
+  .then((result) => {
+    console.log("the result = > ", result);
+
+    const filteredjobs = result?.jobs?.filter(
+      (job) => job.experiencelevel >= 3
+    );
+  })
+  .catch((error) => {
+    console.log("the then from try catch", error);
+  });
+
+// combining all apis
+
+async function combinedApiCall() {
+  try {
+    const [data1, data2] = await Promise.all([
+      fetch("https://fakestoreapi.com/products").then((result) =>
+        result.json()
+      ),
+      fetch("https://cohort2-project-server.onrender.com/job/all-jobs").then(
+        (result2) => result2.json()
+      ),
+    ]);
+
+    // console.log("fake api :", data1);
+    // console.log("my api :", data2);
+
+    return { data1, data2 };
+  } catch (error) {
+    console.log("the then from try catch", error);
+  }
+}
+
+combinedApiCall()
+  .then((result) => {
+    console.log("the data results :", result);
+
+    const newFake = result?.data1.slice(0, 13);
+    console.log("the new fake => ", newFake);
+    const jobdata = result.data2.jobs;
+  })
+  .catch((error) => {
+    console.log(error);
+  });

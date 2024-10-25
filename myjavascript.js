@@ -649,7 +649,6 @@ async function combinedApiCall() {
     console.log("the then from try catch", error);
   }
 }
-
 combinedApiCall()
   .then((result) => {
     console.log("the data results :", result);
@@ -657,7 +656,25 @@ combinedApiCall()
     const newFake = result?.data1.slice(0, 13);
     console.log("the new fake => ", newFake);
     const jobdata = result.data2.jobs;
+
+    const combinedResult = newFake.map((item, index) => {
+      const job = jobdata[index];
+      return {
+        newtitle: `${item.title} - ${job.title}`,
+        salaryPlusPrice: job.salary + item.price,
+      };
+    });
+
+    console.log("the new fake data  => ", combinedResult);
   })
   .catch((error) => {
     console.log(error);
   });
+
+// const combinedResult = newFake.map((item, index) => {
+//   const job = jobdata[index];
+//   return {
+//     newtitle: `${item.title} - ${job.title}`,
+//     salaryPlusPrice: job.salary + item.price,
+//   };
+// });
